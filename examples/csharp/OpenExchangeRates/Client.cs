@@ -24,7 +24,7 @@ namespace OpenExchangeRates
 		/// <param name="symbols">The currency symbols to return when passed. If null then all available currencies are returned.</param>
 		/// <param name="baseCurrency">The currency to use as the base currency on which all rates are based.</param>
 		/// <returns>An <see cref="ExchangeRateData"/> instance.</returns>
-		public static ExchangeRateData Get(IEnumerator<string> symbols = null, string baseCurrency = null)
+		public static ExchangeRateData Get(IEnumerable<string> symbols = null, string baseCurrency = null)
 		{
 			if (ApiKeyMissing) throw new InvalidOperationException("AppSetting '" + ApiKeySetting + "' is missing. A valid value is required in order to use openexchangerates.org.");
 
@@ -45,7 +45,7 @@ namespace OpenExchangeRates
 		/// <param name="symbols">The currency symbols to return when passed. If null then all available currencies are returned.</param>
 		/// <param name="baseCurrency">The currency to use as the base currency on which all rates are based.</param>
 		/// <returns>An <see cref="ExchangeRateData"/> instance.</returns>
-		public static ExchangeRateData Get(DateTime date, IEnumerator<string> symbols = null, string baseCurrency = null)
+		public static ExchangeRateData Get(DateTime date, IEnumerable<string> symbols = null, string baseCurrency = null)
 		{
 			if (ApiKeyMissing) throw new InvalidOperationException("AppSetting '" + ApiKeySetting + "' is missing. A valid value is required in order to use openexchangerates.org.");
 
